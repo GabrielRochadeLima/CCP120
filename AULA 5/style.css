@@ -1,0 +1,193 @@
+body{
+    margin: 100px;
+    background-color: #F5F5F7;
+}
+.titulo{
+    margin: 100px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-content: flex-start;
+    
+}
+.loja{
+    font-size: 25pt;
+    
+}
+
+.imagens{
+    display: flex;
+    justify-content: left;
+    gap: 50px;
+}
+
+.novidades{
+    font-size: 20pt;
+    
+}
+.meio{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    
+   
+}
+.computador{
+    background-color: white;
+    padding: 20px;
+    height: 350px;
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+.celular{
+    background-color: black;
+    padding: 20px;
+    height: 350px;
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+.note{
+    font-size: 7pt;
+    color: gray;
+}
+.valor1{
+    color: gray;
+    font-size: 10pt;
+}
+
+.pro{
+    color:white;
+    font-size: 9pt;
+    
+}
+
+.titanio{
+    color: white;
+    font-size: 20pt;
+}
+.valor2{
+    color: white;
+    font-size: 9pt ;
+
+}
+.ajuda{
+    font-size: 20pt;
+
+}
+.precisar{
+    color: gray;
+}
+.loja{
+    color: gray;
+    
+}
+.lojanegrito{
+    color: black;
+}
+
+.especialista{
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+.diferente{
+    font-size: 15pt;
+}
+
+.apple{
+    font-size: 7pt;
+    color: gray;
+
+}
+
+.final{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    gap: 20px;
+}
+
+.frete{
+    background-color: white;
+    width: 150px;
+    height: 130px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    padding: 10px;
+    align-items: center;
+}
+
+.parcelamento{
+    background-color: white;
+    width: 150px;
+    height: 130px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: baseline;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    padding: 10px;
+    align-items: center;
+}
+
+.experiencia{
+    background-color: white;
+    width: 150px;
+    height: 130px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: baseline;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    padding: 10px;
+    align-items: center;
+}
+.imagemc{
+    height: 260px;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+}
+.mac{
+    display: flex;
+    justify-content: center;
+}
+.iphone{
+    display: flex;
+    justify-content: center;
+}
+.ipad{
+    display: flex;
+    justify-content: center;
+}
+.applewhatch{
+    display: flex;
+    justify-content: center;
+}
+.airpods{
+    display: flex;
+    justify-content: center;
+}
+
+.brasil{
+    display: flex;
+    justify-content: space-between;
+}
+.compra{
+    color: #3180CF;
+}
+.app{
+    color:#3180CF;
+}
+
+footer{
+    padding: 95px;
+    font-size: 10pt;
+    color: gray;
+}
