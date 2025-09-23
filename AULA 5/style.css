@@ -2,13 +2,12 @@ body{
     margin: 100px;
     background-color: #F5F5F7;
 }
-.titulo{
-    margin: 100px;
+.titulo {
+    margin: 0px 100px 50px 100px; 
     display: flex;
     justify-content: space-around;
     gap: 10px;
     align-content: flex-start;
-    
 }
 .loja{
     font-size: 25pt;
