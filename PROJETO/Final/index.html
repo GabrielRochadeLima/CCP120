@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GO games</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <canvas id="game" width="800" height="400"></canvas>
+
+    <div class="hud">
+      <div class="left">
+        <span id="fase">Fase: 1</span>
+        <span id="vidas">Vidas: 3</span>
+        <span id="pontos">Pontos: 0</span>
+        <span id="moedas">Moedas: 0/0</span>
+        <div class="bar" title="progresso da fase"><i id="progress"></i></div>
+      </div>
+      <div class="right">
+        <div class="btns">
+          <button id="btnPause" title="P (pausar)">Pausar</button>
+          <button id="btnReset" title="R (reiniciar)">Reiniciar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="small">
+      Controles: Setas movimentam • P pausa • R reinicia • ESPAÇO atira
+      <a href="equipe.html" id="linkMenu">Sair para o menu</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

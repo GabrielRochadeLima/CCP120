@@ -1,0 +1,134 @@
+/* =========================
+   Tema Matrix — página do jogo
+   ========================= */
+:root{
+  --bg: #0b0f0b;          /* preto esverdeado */
+  --text: #e4ffe9;        /* branco esverdeado */
+  --muted: #9debbf;
+  --neon: #27ff75;        /* verde neon */
+  --neon-2: #00d15a;
+  --line: #153a20;
+  --panel: rgba(12,18,12,.65);
+  --shadow-neon: 0 0 24px rgba(39,255,117,.22), 0 0 4px rgba(39,255,117,.35) inset;
+}
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 800px at 50% -10%, #0f1a10 0%, #091109 40%, #050805 100%);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  overflow: hidden; /* não rolar a página durante o jogo */
+  position: relative;
+}
+
+/* “Chuva” sutil no fundo (sem alterar o HTML) */
+body::before{
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(39,255,117,.14) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(39,255,117,.06) 1px, transparent 1px);
+  background-size: 2px 24px, 1px 14px;
+  animation: fall1 16s linear infinite, fall2 9s linear infinite;
+  mix-blend-mode: screen;
+  opacity: .45;
+}
+@keyframes fall1 { from { background-position-y: 0, 0 } to { background-position-y: 24px, 14px } }
+@keyframes fall2 { from { background-position-y: 0, 0 } to { background-position-y: 2400px, 1400px } }
+
+.wrap{
+  display: grid;
+  gap: .75rem;
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-neon);
+}
+
+/* Canvas com borda neon e raio maior */
+canvas{
+  background: #051006;
+  border: 2px solid var(--neon-2);
+  border-radius: 14px;
+  max-width: 92vw;
+  height: auto;
+  box-shadow: 0 0 22px rgba(39,255,117,.18), 0 0 2px rgba(39,255,117,.65) inset;
+}
+
+/* HUD em “vidro” com glow */
+.hud{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 14px;
+  padding: 8px 10px;
+  background: rgba(5,12,7,.55);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+.hud .left, .hud .right{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Botões com estilo neon */
+.btns{ display:flex; gap:.5rem; }
+button{
+  background: rgba(10,22,12,.75);
+  border: 1px solid var(--neon-2);
+  color: var(--text);
+  padding: .45rem .75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(39,255,117,.18), 0 0 2px rgba(39,255,117,.6) inset;
+  transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
+}
+button:hover{
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(39,255,117,.28), 0 0 2px rgba(39,255,117,.9) inset;
+}
+button:active{ transform: translateY(0); }
+
+/* Barra de progresso da fase (neon) */
+.bar{
+  width: 200px;
+  height: 10px;
+  background: rgba(229,231,235,.08);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 8px rgba(39,255,117,.2);
+}
+.bar>i{
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon), var(--neon-2));
+  width: 0%;
+  box-shadow: 0 0 14px rgba(39,255,117,.4);
+}
+
+/* Rodapézinho de dicas */
+.small{
+  opacity:.85;
+  font-size:12px;
+  text-align:center;
+  color: var(--muted);
+}
+a{ color:#93c5fd; text-decoration: none }
+a:hover{ text-decoration: underline }
+
+/* Acessibilidade / UX */
+*:focus-visible{
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
