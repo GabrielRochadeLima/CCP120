@@ -1,0 +1,28 @@
+
+#canvas{
+
+    border: 1px solid black
+
+}
+
+#canvas2{
+    background-color: aquamarine;
+    border: 1px solid black
+    
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+  
+   
+}
+
+.portifolio{
+    display: flex;
+    align-self: flex-start;
+
+   
+}
+

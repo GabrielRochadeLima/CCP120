@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title><%= status === 'sucesso' ? 'Post cadastrado' : 'Erro' %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1><%= titulo_msg %></h1>
+    <p><%= mensagem %></p>
+
+    <% if (post) { %>
+      <h2><%= post.titulo %></h2>
+      <p><strong>Resumo:</strong> <%= post.resumo %></p>
+      <p><strong>Conteúdo:</strong> <%= post.conteudo %></p>
+      <p><em>Criado em: <%= post.dataCriacao ? new Date(post.dataCriacao).toLocaleString('pt-BR') : '—' %></em></p>
+    <% } %>
+
+    <p>
+      <a href="/blog">Voltar ao Blog</a> —
+      <a href="/cadastrar_post">Criar outro</a>
+    </p>
+  </div>
+</body>
+</html>

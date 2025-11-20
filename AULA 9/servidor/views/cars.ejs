@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carros Disponíveis</title>
+  <link rel="stylesheet" href="/style_lab10.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Carros Disponíveis</h1>
+      <nav class="actions">
+        <a class="btn" href="/login">Área Admin</a>
+      </nav>
+    </header>
+
+    <% if (ok === 'vendido') { %>
+      <div class="msg success">✅ Venda realizada!</div>
+    <% } else if (ok === 'esgotado') { %>
+      <div class="msg warning">⚠️ Esgotado.</div>
+    <% } %>
+
+    <% if (!carros || carros.length === 0) { %>
+      <p>Nenhum carro cadastrado.</p>
+    <% } else { %>
+      <div class="grid">
+      <% carros.forEach(c => { %>
+        <div class="card">
+          <h2><%= c.marca %> <small><%= c.modelo %></small></h2>
+          <p><b>Ano:</b> <%= c.ano %></p>
+          <p><b>Qtde:</b> 
+            <% if ((c.qtde_disponivel || 0) <= 0) { %>
+              <span class="badge danger">Esgotado</span>
+            <% } else { %>
+              <span class="badge ok"><%= c.qtde_disponivel %></span>
+            <% } %>
+          </p>
+          <form method="POST" action="/cars/<%= c._id %>/sell">
+            <button type="submit" <%= (c.qtde_disponivel || 0) <= 0 ? 'disabled' : '' %> >
+              Vender
+            </button>
+          </form>
+        </div>
+      <% }) %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

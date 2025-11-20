@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/style_lab10.css" />
+</head>
+<body>
+  <div class="card container">
+    <h1>Login</h1>
+    <% if (error) { %><div class="msg error"><%= error %></div><% } %>
+    <form method="POST" action="/login" class="vstack">
+      <input type="text" name="login" placeholder="Login" required />
+      <input type="password" name="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="mt"><a href="/register">Criar conta</a></p>
+  </div>
+</body>
+</html>

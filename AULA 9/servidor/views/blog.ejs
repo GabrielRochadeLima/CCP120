@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Meu Blog</h1>
+      <a href="/cadastrar_post"><button>Criar Novo Post</button></a>
+    </header>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <% if (!posts || posts.length === 0) { %>
+      <p>Nenhum post cadastrado ainda.</p>
+    <% } else { %>
+      <% posts.forEach(p => { %>
+        <div class="post-card">
+          <h2><%= p.titulo %></h2>
+          <p><strong>Resumo:</strong> <%= p.resumo %></p>
+          <p><strong>Conteúdo:</strong> <%= p.conteudo %></p>
+          <p><em>Criado em: <%= p.dataCriacao ? new Date(p.dataCriacao).toLocaleString('pt-BR') : '—' %></em></p>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+</html>

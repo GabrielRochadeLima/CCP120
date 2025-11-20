@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Post</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastrar Novo Post</h1>
+    <form action="/cadastrar_post" method="POST">
+      <label>Título:</label>
+      <input type="text" name="titulo" placeholder="Título" required>
+
+      <label>Resumo:</label>
+      <input type="text" name="resumo" placeholder="Resumo" required>
+
+      <label>Conteúdo:</label>
+      <textarea name="conteudo" placeholder="Conteúdo" rows="5" required></textarea>
+
+      <button type="submit">Cadastrar Post</button>
+    </form>
+    <br>
+    <a href="/blog">Voltar ao Blog</a>
+    <a href="/AULA 2/LAB2/projects.html">Portifólio</a>
+  </div>
+</body>
+</html>

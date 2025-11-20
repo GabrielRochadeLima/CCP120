@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerência de Carros</title>
+  <link rel="stylesheet" href="/style_lab10.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Gerência de Carros</h1>
+      <nav class="actions">
+        <a class="btn" href="/cars">Ver Loja</a>
+      </nav>
+    </header>
+
+    <% if (ok === 'created') { %><div class="msg success">Carro cadastrado!</div><% } %>
+    <% if (ok === 'updated') { %><div class="msg success">Carro atualizado!</div><% } %>
+    <% if (ok === 'deleted') { %><div class="msg success">Carro removido!</div><% } %>
+    <% if (ok === 'campos')  { %><div class="msg warning">Preencha todos os campos.</div><% } %>
+
+    <section class="card">
+      <h2>Novo carro</h2>
+      <form method="POST" action="/admin/cars/new" class="grid2">
+        <input type="text"   name="marca" placeholder="Marca" required />
+        <input type="text"   name="modelo" placeholder="Modelo" required />
+        <input type="number" name="ano" placeholder="Ano" required />
+        <input type="number" name="qtde_disponivel" placeholder="Qtde" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+
+    <h2 class="mt">Lista de carros</h2>
+
+    <% if (!carros || carros.length === 0) { %>
+      <p>Nenhum carro cadastrado.</p>
+    <% } else { %>
+      <% carros.forEach(c => { %>
+        <div class="card">
+          <form method="POST" action="/admin/cars/<%= c._id %>/update" class="grid2">
+            <input type="text"   name="marca"           value="<%= c.marca %>" required />
+            <input type="text"   name="modelo"          value="<%= c.modelo %>" required />
+            <input type="number" name="ano"             value="<%= c.ano %>" required />
+            <input type="number" name="qtde_disponivel" value="<%= c.qtde_disponivel || 0 %>" required />
+            <button type="submit">Atualizar</button>
+          </form>
+          <form method="POST" action="/admin/cars/<%= c._id %>/delete" class="inline">
+            <button type="submit" class="danger">Remover</button>
+          </form>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+</html>

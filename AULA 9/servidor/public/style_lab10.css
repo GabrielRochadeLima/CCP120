@@ -1,0 +1,80 @@
+/* Fundo e centralização */
+body {
+  margin: 0;
+  background: #e9f3ff;             /* cor do fundo (requisito) */
+  display: flex;
+  justify-content: center;          /* centraliza horizontal */
+  align-items: flex-start;          /* centraliza no topo vertical */
+  min-height: 100vh;
+  font-family: system-ui, Arial, sans-serif;
+  color: #1a2b3c;
+  padding: 24px;
+}
+
+/* Container central */
+.container {
+  width: 100%;
+  max-width: 960px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  padding: 24px;
+}
+
+/* Cabeçalho */
+.header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 16px; }
+.actions .btn { margin-left: 8px; }
+
+/* Botões */
+button, .btn {
+  background: #1f7ae0;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover, .btn:hover { filter: brightness(.95); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.danger { background:#d14; }
+
+/* Cards e grids */
+.card {
+  background: #f7fbff;
+  border: 1px solid #d9e9ff;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.grid2 { display:grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.inline { display:inline-block; margin-top: 8px; }
+.vstack { display:flex; flex-direction: column; gap: 10px; }
+
+h1, h2 { margin: 0 0 10px; }
+.mt { margin-top: 16px; }
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  border: 1px solid #c9d9f0;
+  border-radius: 8px;
+  padding: 10px;
+}
+textarea { min-height: 90px; }
+
+/* Badges + mensagens */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: .85rem;
+  border: 1px solid #bcd;
+}
+.badge.ok { background:#e7f6ff; border-color:#a4d2ff; }
+.badge.danger { background:#ffe7e7; border-color:#ffb3b3; color:#a00; }
+
+.msg { padding:10px 12px; border-radius:8px; margin: 10px 0; }
+.msg.success { background:#eaffea; border:1px solid #bfe6bf; color:#256d25; }
+.msg.warning { background:#fff6ea; border:1px solid #ffdfb6; color:#8a5a1f; }
+.msg.error   { background:#ffeaea; border:1px solid #ffb4b4; color:#8a1f1f; }
