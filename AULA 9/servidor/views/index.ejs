@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dispensa FEI Moderna</title>
+  <link rel="stylesheet" href="/style_dispensa.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="/img/dispensa_icon.png" alt="Ícone da dispensa" class="icon">
+      <h1>Bem-vindo à Dispensa FEI</h1>
+      <p>Controle seus produtos de forma simples e moderna!</p>
+    </header>
+
+    <section class="form-section">
+      <h2>Adicionar produto</h2>
+      <form method="POST" action="/add" class="grid-form">
+        <input name="nome" type="text" placeholder="Nome do item" required>
+        <select name="tipo" required>
+          <option value="1">Refrigerado</option>
+          <option value="2">Não Refrigerado</option>
+        </select>
+        <input name="quantidade" type="number" placeholder="Quantidade" required>
+        <input name="vencimento" type="date" required>
+        <button type="submit">Armazenar</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2><%= produtos.length %> produtos armazenados</h2>
+      <% if (produtos.length === 0) { %>
+        <p>Nenhum produto armazenado.</p>
+      <% } else { %>
+        <table>
+          <thead>
+            <tr><th>Nome</th><th>Tipo</th><th>Quantidade</th><th>Vencimento</th><th>Ação</th></tr>
+          </thead>
+          <tbody>
+            <% produtos.forEach(p => { %>
+              <tr>
+                <td><%= p.nome %></td>
+                <td><%= p.tipo %></td>
+                <td><%= p.quantidade %></td>
+                <td><%= p.vencimento %></td>
+                <td>
+                  <form method="POST" action="/remove/<%= p._id %>">
+                    <button class="danger">Remover</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </section>
+  </div>
+</body>
+</html>
